@@ -1,5 +1,6 @@
 import express from 'express';
 import config from './config';
+import path from 'path';
 
 const { port } = config;
 
@@ -17,5 +18,7 @@ export class Server {
         this.app.get('/teste', (req, res) => {
             res.send('Funcionando :)');
         });
+
+        this.app.use('/', express.static(path.join(__dirname, 'build')));
     }
 }
