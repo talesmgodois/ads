@@ -1,8 +1,9 @@
 import express from 'express';
 import config from './config';
 import path from 'path';
+import dotenv from 'dotenv';
 
-const { port } = config;
+const { port, hostname } = config;
 
 export class Server {
     constructor() {
@@ -11,7 +12,9 @@ export class Server {
 
     startup() {
         this.setupRoutes();
-        this.app.listen(port, () => console.log(`Listening on ${port}`));
+        this.app.listen(port, () =>
+            console.log(`Listening on ${hostname}:${port}`)
+        );
     }
 
     setupRoutes() {

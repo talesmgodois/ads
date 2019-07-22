@@ -1,7 +1,7 @@
 {
     "name": "simulator-api",
     "version": "1.0.0",
-    "main": "index.js",
+    "main": "src/index.js",
     "license": "MIT",
     "scripts": {
         "start": "nodemon --exec babel-node src/index.js"
@@ -16,6 +16,7 @@
     "dependencies": {
         "babel-cli": "^6.26.0",
         "babel-preset-env": "^1.7.0",
+        "dotenv": "^8.0.0",
         "express": "^4.17.1",
         "path": "^0.12.7"
     }
